@@ -1,4 +1,4 @@
-const name = prompt("Please enter your name: ")
+const name = prompt('Please enter your name: ');
 result = Math.floor(Math.random() * 4) + 1;
 
 if (result === 1) {
@@ -10,5 +10,5 @@ if (result === 1) {
 } else if (result === 4) {
   house = 'Ravenclaw';
 } else {
-  house = 'JavaScript Error!'
+  house = 'JavaScript Error!';
 }
