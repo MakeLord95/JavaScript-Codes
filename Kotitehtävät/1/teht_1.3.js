@@ -1,11 +1,8 @@
-const nbr1_str = prompt("Enter first value")
-const nbr1 = parseFloat(nbr1_str)
+const nbr1 = parseFloat(prompt("Enter first value"))
 
-const nbr2_str = prompt("Enter second value")
-const nbr2 = parseFloat(nbr2_str)
+const nbr2 = parseFloat(prompt("Enter second value"))
 
-const nbr3_str = prompt("Enter third value")
-const nbr3 = parseFloat(nbr3_str)
+const nbr3 = parseFloat(prompt("Enter third value"))
 
 sum = nbr1 + nbr2 + nbr3
 product = nbr1 * nbr2 * nbr3
