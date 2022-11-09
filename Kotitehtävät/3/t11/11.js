@@ -94,20 +94,34 @@ const picArray = [
 
 // add your code here
 
-let list = document.getElementById('pictures');
-
+//Task 5 part
 for (let i = 0; i < picArray.length; ++i) {
+  let list = document.getElementById('pictures');
+
   let article = document.createElement('article');
-
-  article.innerHTML =
-      '<h2>' + picArray[i]['title'] + '</h2>' +
-      '<figure> ' +
-      '<img src="' + picArray[i]['image']['medium'] + '" alt="' +
-      picArray[i]['title'] + '"/>' +
-      '<figcaption>' + picArray[i]['caption'] + '</figcaption>' +
-      '</figure>' +
-      '<p>' + picArray[i]['description'] + '</p>';
-
   article.classList.add('card');
   list.appendChild(article);
+
+  let h2 = document.createElement('h2');
+  article.appendChild(h2);
+  h2.innerText = picArray[i]['title'];
+
+  let figure = document.createElement('figure');
+  article.appendChild(figure);
+
+  let img = document.createElement('img');
+  figure.appendChild(img);
+  img.src = picArray[i]['image']['medium'];
+  img.alt = picArray[i]['title'];
+
+  let figcaption = document.createElement('figcaption');
+  figure.appendChild(figcaption);
+  figcaption.innerText = picArray[i]['caption'];
+
+  let p = document.createElement('p');
+  article.appendChild(p);
+  p.innerText = picArray[i]['description'];
 }
+
+//Task 11 part
+
