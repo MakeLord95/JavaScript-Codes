@@ -12,3 +12,6 @@ function testLeap() {
 }
 
 year = parseFloat(prompt('Please enter a year'));
+
+document.querySelector('#result').innerHTML = 'The year ' + year + ' ' +
+    testLeap() + ' a leap year';

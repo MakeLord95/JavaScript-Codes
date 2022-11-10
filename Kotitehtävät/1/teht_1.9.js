@@ -17,3 +17,5 @@ if (num > 1) {
 } else {
   result = 'The number ' + num + ' is not a prime number!';
 }
+
+document.querySelector('#result').innerHTML = result;

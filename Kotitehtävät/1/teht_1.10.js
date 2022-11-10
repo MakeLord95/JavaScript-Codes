@@ -29,3 +29,7 @@ array = rollTheDice();
 times = getOccurrence(array, sum_interested);
 
 result = times / 100;
+
+document.querySelector('#result').innerHTML = 'Propability to get the sum ' +
+    sum_interested + ' with ' + dice +
+    ' dice is ' + result + '%';

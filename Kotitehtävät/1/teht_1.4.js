@@ -12,3 +12,5 @@ if (result === 1) {
 } else {
   house = 'JavaScript Error!';
 }
+
+document.querySelector('#result').innerHTML = name + ', you are ' + house;

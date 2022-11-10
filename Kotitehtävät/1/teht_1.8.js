@@ -16,3 +16,10 @@ while (year <= endYear) {
   }
   year++;
 }
+
+list = document.getElementById('UnList');
+for (let i = 0; i < leapYears.length; ++i) {
+  let li = document.createElement('li');
+  li.innerText = leapYears[i];
+  list.appendChild(li);
+}

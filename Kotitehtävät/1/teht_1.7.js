@@ -15,3 +15,5 @@ const rollTheDice = (dice) => {
 result = rollTheDice(dice);
 
 sum = result.reduce((partial_sum, a) => partial_sum + a, 0);
+
+document.querySelector('#result').innerHTML = 'The sum of the dices: ' + sum;

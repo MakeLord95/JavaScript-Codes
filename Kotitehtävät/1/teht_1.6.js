@@ -11,3 +11,5 @@ if (answer === true) {
 } else if (answer === false) {
   result = 'The square root is not calculated.';
 }
+
+document.querySelector('#result').innerHTML = result;
