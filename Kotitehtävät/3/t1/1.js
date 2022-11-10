@@ -1,4 +1,4 @@
-document.getElementById('target').classList.toggle('my-list')
+document.getElementById('target').classList.toggle('my-list');
 
 document.getElementById('target').innerHTML =
     '<li>First Item</li>' +
