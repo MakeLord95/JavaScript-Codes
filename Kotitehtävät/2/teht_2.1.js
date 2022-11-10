@@ -27,4 +27,8 @@ while (nbr <= 5) {
   nbr++;
 }
 
-console.log(reverseArray(numbers));
+reversed_array = reverseArray(numbers)
+
+for (let i = 0; i < reversed_array.length; i++) {
+  console.log(reversed_array[i])
+}

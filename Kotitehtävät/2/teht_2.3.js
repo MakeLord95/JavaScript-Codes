@@ -34,3 +34,10 @@ for (let i = 0; i < dogs.length; i++) {
 
   console.log((i + 1) + suffix + ' dog: ' + dogs[i]);
 }
+
+list = document.getElementById('UlList');
+for (let i = 0; i < dogs.length; ++i) {
+  let li = document.createElement('li');
+  li.innerText = dogs[i];
+  list.appendChild(li);
+}
