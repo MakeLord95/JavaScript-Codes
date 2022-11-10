@@ -6,7 +6,7 @@ const rollTheDice = (dice) => {
 
   for (let i = 0; i < dice; i++) {
     value = Math.floor(Math.random() * 6 + 1);
-    console.log('Dice rolled ' + value);
+    console.log(i + 1 + '. Dice rolled ' + value);
     values.push(value);
   }
   return values;
