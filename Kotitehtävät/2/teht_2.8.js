@@ -15,3 +15,5 @@ function concat(arr) {
 let array = ['Johnny', 'DeeDee', 'Joey', 'Marky', 'Jesus'];
 
 result = concat(array);
+
+document.querySelector('#result').innerHTML = result;

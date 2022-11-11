@@ -14,3 +14,10 @@ while (true) {
     break;
   }
 }
+
+list = document.getElementById('UlList');
+for (let i = 0; i < nbr_list.length; ++i) {
+  let li = document.createElement('li');
+  li.innerText = nbr_list[i];
+  list.appendChild(li);
+}

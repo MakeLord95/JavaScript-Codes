@@ -23,3 +23,10 @@ while (nbr <= nbr_or_participants) {
 for (let i = 0; i < participants.length; i++) {
   console.log(participants[i]);
 }
+
+list = document.getElementById('OlList');
+for (let i = 0; i < participants.length; ++i) {
+  let li = document.createElement('li');
+  li.innerText = participants[i];
+  list.appendChild(li);
+}
