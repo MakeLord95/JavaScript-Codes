@@ -13,11 +13,11 @@ function remove_uneven(arr_nbrs) {
 let nbrs_even = [];
 let nbrs_orig = [];
 
-const ammount = parseInt(prompt("How many random numbers do you want?"))
+const ammount = parseInt(prompt('How many random numbers do you want?'));
 
 for (let i = 0; i < ammount; i++) {
-  let value = Math.floor(Math.random() * ammount) + 1
-  nbrs_orig.push(value)
+  let value = Math.floor(Math.random() * ammount) + 1;
+  nbrs_orig.push(value);
 }
 
 nbrs_even = remove_uneven(nbrs_orig);
@@ -32,5 +32,5 @@ for (let i = 0; i < nbrs_even.length; i++) {
   console.log(nbrs_even[i]);
 }
 
-console.log(nbrs_orig)
-console.log(nbrs_even)
+console.log(nbrs_orig);
+console.log(nbrs_even);
