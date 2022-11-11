@@ -1,4 +1,4 @@
-function even(arr_nbrs) {
+function remove_uneven(arr_nbrs) {
   let nbrs_even = [];
 
   for (let i = 0; i < arr_nbrs.length; i++) {
@@ -11,9 +11,16 @@ function even(arr_nbrs) {
 }
 
 let nbrs_even = [];
-let nbrs_orig = [2, 3, 4, 5, 6, 7, 8, 9, 10, 12, 111, 2012];
+let nbrs_orig = [];
 
-nbrs_even = even(nbrs_orig);
+const ammount = parseInt(prompt("How many random numbers do you want?"))
+
+for (let i = 0; i < ammount; i++) {
+  let value = Math.floor(Math.random() * ammount) + 1
+  nbrs_orig.push(value)
+}
+
+nbrs_even = remove_uneven(nbrs_orig);
 
 console.log('Original array: ');
 for (let i = 0; i < nbrs_orig.length; i++) {
@@ -24,3 +31,6 @@ console.log('Only even numbers: ');
 for (let i = 0; i < nbrs_even.length; i++) {
   console.log(nbrs_even[i]);
 }
+
+console.log(nbrs_orig)
+console.log(nbrs_even)
