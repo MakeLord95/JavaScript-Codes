@@ -22,10 +22,11 @@ async function asynchronousFunction(search_term) {
 
 function appendData(data) {
   console.clear();
-  let jsonData = JSON.stringify(data, null, 2);
-  console.log(jsonData);
+  let jsonData = data
+  //let jsonData = JSON.stringify(data, null, 2);
+  console.log(jsonData[0]['show']['name']);
 
-  document.getElementById('tulos').innerText = jsonData;
+  document.getElementById('tulos').innerText = jsonData[0]['show']['name'];
 }
 
 const button = document.querySelector('input[type="submit"]');
@@ -36,5 +37,5 @@ button.addEventListener('click', function(evt) {
 
   let search_term = document.querySelector('input[name="search_term"]').value;
   console.log(search_term);
-  asynchronousFunction(search_term);
+  asynchronousFunction(search_term).then(r => r);
 });
