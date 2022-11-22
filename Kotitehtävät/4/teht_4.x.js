@@ -51,9 +51,6 @@ function appendData(jsonData) {
       img.alt = 'medium_image_for_show';
     }
 
-    let img = document.createElement('img');
-    figure.appendChild(img);
-
     let figcaption = document.createElement('figcaption');
     figure.appendChild(figcaption);
 
