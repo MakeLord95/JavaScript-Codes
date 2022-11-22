@@ -20,7 +20,6 @@ async function asynchronousFunction(search_term) {
 }
 
 function appendData(jsonData) {
-  console.clear();
 
   list = document.getElementById('pictures');
   list.innerHTML = '';
@@ -47,31 +46,42 @@ function appendData(jsonData) {
     } else {
       let img = document.createElement('img');
       figure.appendChild(img);
-      img.src = 'https://via.placeholder.com/243x486?text=Show+has+no+image';
+      img.src = 'https://via.placeholder.com/350x492?text=Show+has+no+image';
       img.alt = 'medium_image_for_show';
     }
 
     let figcaption = document.createElement('figcaption');
     figure.appendChild(figcaption);
 
-    figcaption.innerText = 'Genres: ' + jsonData[i]['show']['genres'].join(' | ');
+    if (jsonData[i]['show']['genres'].length !== 0) {
+      figcaption.innerText = 'Genres: ' +
+          jsonData[i]['show']['genres'].join(' | ');
+    } else {
+      figcaption.innerText = 'No Genres known';
+    }
+
+
 
 
     let a = document.createElement('a');
     figure.appendChild(a);
-    a.innerText = 'Link to show details';
+    a.innerText = 'More Details';
     a.setAttribute('href', jsonData[i]['show']['url']);
-    a.setAttribute('target', '_blank')
+    a.setAttribute('target', '_blank');
 
-    let p = document.createElement('p');
-    article.appendChild(p);
-    p.innerHTML = jsonData[i]['show']['summary'];
+
+
+
+
+
+    article.innerHTML += jsonData[i]['show']['summary'];
   }
 }
 
 const button = document.querySelector('input[type="submit"]');
 
 button.addEventListener('click', function(evt) {
+  console.clear();
   evt.preventDefault();
   console.log('button pressed');
 
