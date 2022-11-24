@@ -53,26 +53,20 @@ function appendData(jsonData) {
     let figcaption = document.createElement('figcaption');
     figure.appendChild(figcaption);
 
-    if (jsonData[i]['show']['genres'].length !== 0) {
+    if (jsonData[i]['show']['genres'].length > 1) {
       figcaption.innerText = 'Genres: ' +
           jsonData[i]['show']['genres'].join(' | ');
+    } else if (jsonData[i]['show']['genres'].length === 1) {
+      figcaption.innerText = 'Genre: ' + jsonData[i]['show']['genres'];
     } else {
       figcaption.innerText = 'No Genres known';
     }
-
-
-
 
     let a = document.createElement('a');
     figure.appendChild(a);
     a.innerText = 'More Details';
     a.setAttribute('href', jsonData[i]['show']['url']);
     a.setAttribute('target', '_blank');
-
-
-
-
-
 
     article.innerHTML += jsonData[i]['show']['summary'];
   }

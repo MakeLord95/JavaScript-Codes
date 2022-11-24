@@ -1,5 +1,5 @@
 html {
-    font-family: Verdana, Arial, Helvetica, sans-serif;
+    font-family: "Roboto Light", sans-serif;
 }
 
 body {
@@ -27,7 +27,7 @@ input[type=text] {
     border-radius: 4px;
     font-size: 12px;
     background-color: white;
-    background-image: url('searchicon.png');
+    background-image: url('img/searchicon.png');
     background-position: 10px 10px;
     background-repeat: no-repeat;
     padding: 12px 20px 12px 40px;
