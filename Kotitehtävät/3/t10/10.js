@@ -5,7 +5,7 @@ let full_name;
 const button = document.querySelector('input[type="submit"]');
 
 button.addEventListener('click', function(evt) {
-  event.preventDefault();
+  evt.preventDefault();
   console.log('button pressed');
 
   first_name = document.querySelector('input[name="firstname"]').value;

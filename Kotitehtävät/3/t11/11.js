@@ -98,30 +98,67 @@ const picArray = [
 for (let i = 0; i < picArray.length; ++i) {
   let list = document.getElementById('pictures');
 
+  //Luodaan article ja lisätään siihen class 'card'
   let article = document.createElement('article');
-  article.classList.add('card');
+  article.classList.toggle('card');
   list.appendChild(article);
 
+  //Luodaan h2 ja lisätään sille title
   let h2 = document.createElement('h2');
   article.appendChild(h2);
   h2.innerText = picArray[i]['title'];
 
+  //Luodaan figure
   let figure = document.createElement('figure');
   article.appendChild(figure);
 
+  //Luodaan img ja lisätään sille src ja alt
   let img = document.createElement('img');
   figure.appendChild(img);
   img.src = picArray[i]['image']['medium'];
   img.alt = picArray[i]['title'];
 
+  //Luodaan figcaption ja lisätään sille caption
   let figcaption = document.createElement('figcaption');
   figure.appendChild(figcaption);
   figcaption.innerText = picArray[i]['caption'];
 
+  //Luodaan p ja lisätään sille description
   let p = document.createElement('p');
   article.appendChild(p);
   p.innerText = picArray[i]['description'];
+
 }
 
-//Task 11 part
+//Luodaan articles -array johon kuuluu kaikki HTML-elementit joilla on 'card' classi
+let articles = Array.from(document.getElementsByClassName('card'));
 
+articles.forEach(article => {
+  article.addEventListener('click', function handleClick(evt) {
+    console.log('open modal');
+
+    let modal = document.querySelector('dialog');
+
+    let modalImg = modal.querySelector('img');
+
+    modal.showModal();
+
+    //Selvitetään mitä articlea käyttäjä painaa
+    for (let i = 0; i < articles.length; i++) {
+      if (article === articles[i]) {
+        console.log(i + 1);
+        modalImg.src = picArray[i]['image']['large'];
+      }
+    }
+
+    let span = modal.getElementsByTagName('span');
+
+    //Lisätään span 'x' napin sulkemistoiminto
+    for (let btn of span) {
+      btn.addEventListener('click', () => {
+        console.log('close modal');
+        modal.close();
+      });
+    }
+  });
+});
