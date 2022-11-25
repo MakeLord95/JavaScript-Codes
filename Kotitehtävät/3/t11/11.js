@@ -130,6 +130,9 @@ for (let i = 0; i < picArray.length; ++i) {
 
 }
 
+
+//Task 11 part
+
 //Luodaan articles -array johon kuuluu kaikki HTML-elementit joilla on 'card' classi
 let articles = Array.from(document.getElementsByClassName('card'));
 
