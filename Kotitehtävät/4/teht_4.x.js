@@ -25,7 +25,7 @@ function appendData(jsonData) {
   list.innerHTML = '';
 
   for (let i = 0; i < jsonData.length; i++) {
-    console.log(JSON.stringify(jsonData[i], null, 2));
+    //console.log(JSON.stringify(jsonData[i], null, 2));
 
     let article = document.createElement('article');
     article.classList.add('card');
@@ -65,11 +65,20 @@ function appendData(jsonData) {
     let a = document.createElement('a');
     figure.appendChild(a);
     a.innerText = 'More Details';
+
     a.setAttribute('href', jsonData[i]['show']['url']);
     a.setAttribute('target', '_blank');
 
     article.innerHTML += jsonData[i]['show']['summary'];
+
+    let iframe = document.querySelector('iframe');
+
+    iframe.src = jsonData[i]['show']['url'];
+    iframe.setAttribute('width', '1024');
+    iframe.setAttribute('height', '720');
+
   }
+
 }
 
 const button = document.querySelector('input[type="submit"]');
@@ -83,3 +92,5 @@ button.addEventListener('click', function(evt) {
   console.log(search_term);
   asynchronousFunction(search_term).then(r => r);
 });
+
+

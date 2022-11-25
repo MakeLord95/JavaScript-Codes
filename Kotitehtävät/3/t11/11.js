@@ -135,6 +135,7 @@ let articles = Array.from(document.getElementsByClassName('card'));
 
 articles.forEach(article => {
   article.addEventListener('click', function handleClick(evt) {
+    evt = null
     console.log('open modal');
 
     let modal = document.querySelector('dialog');
