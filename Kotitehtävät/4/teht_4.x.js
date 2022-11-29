@@ -1,4 +1,7 @@
 async function asynchronousFunction(search_term) {
+
+  const answer = confirm('Would you like to use iframe?');
+
   console.log('asynchronous download begins');
   try {
     fetch('https://api.tvmaze.com/search/shows?q=' + search_term).
@@ -6,7 +9,7 @@ async function asynchronousFunction(search_term) {
           return response.json();
         }).
         then(function(data) {
-          appendData(data);
+          appendData(data, answer);
         }).
         catch(function(err) {
           console.log(err);
@@ -19,13 +22,15 @@ async function asynchronousFunction(search_term) {
   }
 }
 
-function appendData(jsonData) {
+function appendData(jsonData, answer) {
 
-  list = document.getElementById('pictures');
+  let iframe = document.querySelector('iframe');
+  let list = document.getElementById('pictures');
+
   list.innerHTML = '';
 
   for (let i = 0; i < jsonData.length; i++) {
-    //console.log(JSON.stringify(jsonData[i], null, 2));
+    console.log(JSON.stringify(jsonData[i], null, 2));
 
     let article = document.createElement('article');
     article.classList.add('card');
@@ -66,18 +71,53 @@ function appendData(jsonData) {
     figure.appendChild(a);
     a.innerText = 'More Details';
 
-    a.setAttribute('href', jsonData[i]['show']['url']);
-    a.setAttribute('target', '_blank');
+    if (answer === false) {
+      a.setAttribute('href', jsonData[i]['show']['url']);
+      a.setAttribute('target', '_blank');
+    }
+
+    let a_2 = document.createElement('a');
+    figure.appendChild(a);
+    a_2.innerText = 'More Details - iframe';
 
     article.innerHTML += jsonData[i]['show']['summary'];
 
-    let iframe = document.querySelector('iframe');
-
-    iframe.src = jsonData[i]['show']['url'];
-    iframe.setAttribute('width', '1024');
-    iframe.setAttribute('height', '720');
-
   }
+
+  let articles = Array.from(document.getElementsByTagName('a'));
+
+  articles.forEach(article => {
+    article.addEventListener('click', function handleClick(evt) {
+      evt = null;
+      console.log('open modal');
+
+      let modal = document.querySelector('dialog');
+
+      if (answer === true) {
+        modal.showModal();
+      }
+
+      //Selvitetään mitä articlea käyttäjä painaa
+      for (let i = 0; i < articles.length; i++) {
+        if (article === articles[i]) {
+          console.log(i + 1);
+          iframe.src = jsonData[i]['show']['url'];
+          iframe.setAttribute('width', '1024');
+          iframe.setAttribute('height', '720');
+        }
+      }
+
+      let span = modal.getElementsByTagName('span');
+
+      //Lisätään span 'x' napin sulkemistoiminto
+      for (let btn of span) {
+        btn.addEventListener('click', () => {
+          console.log('close modal');
+          modal.close();
+        });
+      }
+    });
+  });
 
 }
 
@@ -89,8 +129,6 @@ button.addEventListener('click', function(evt) {
   console.log('button pressed');
 
   let search_term = document.querySelector('input[name="search_term"]').value;
-  console.log(search_term);
+  console.log('Search term: ' + search_term);
   asynchronousFunction(search_term).then(r => r);
 });
-
-

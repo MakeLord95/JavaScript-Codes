@@ -20,6 +20,13 @@ header {
     text-align: center;
 }
 
+header img {
+    float: left;
+    width: 120px;
+    height: 120px;
+
+}
+
 input[type=text] {
     text-align: left;
     box-sizing: border-box;
