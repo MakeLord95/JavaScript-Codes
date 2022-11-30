@@ -97,7 +97,7 @@ function appendData(jsonData, answer) {
         modal.showModal();
       }
 
-      //Selvitetään mitä articlea käyttäjä painaa
+      //Selvitet��n mit� articlea k�ytt�j� painaa
       for (let i = 0; i < articles.length; i++) {
         if (article === articles[i]) {
           console.log(i + 1);
@@ -128,8 +128,7 @@ button.addEventListener('click', function(evt) {
   evt.preventDefault();
   console.log('button pressed');
 
-  let search_term = 'Dome';
-  //document.querySelector('input[name="search_term"]').value;
+  let search_term = document.querySelector('input[name="search_term"]').value;
   console.log('Search term: ' + search_term);
   asynchronousFunction(search_term).then(r => r);
 });
