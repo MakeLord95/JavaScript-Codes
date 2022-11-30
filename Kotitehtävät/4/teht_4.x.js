@@ -128,8 +128,7 @@ button.addEventListener('click', function(evt) {
   evt.preventDefault();
   console.log('button pressed');
 
-  let search_term = 'Dome';
-  //document.querySelector('input[name="search_term"]').value;
+  let search_term = document.querySelector('input[name="search_term"]').value;
   console.log('Search term: ' + search_term);
   asynchronousFunction(search_term).then(r => r);
 });
