@@ -97,7 +97,7 @@ function appendData(jsonData, answer) {
         modal.showModal();
       }
 
-      //Selvitetään mitä articlea käyttäjä painaa
+      //Selvitet��n mit� articlea k�ytt�j� painaa
       for (let i = 0; i < articles.length; i++) {
         if (article === articles[i]) {
           console.log(i + 1);
