@@ -1,11 +1,12 @@
 html {
     font-family: "Roboto Light", sans-serif;
+    color: white;
 }
 
 body {
     margin: 0;
     padding: 0;
-    background-color: #f0ddd5;
+    background-color: #4D4C7D;
 }
 
 .container {
@@ -14,9 +15,8 @@ body {
 }
 
 header {
-    background-color: #3ea9dd;
+    background-color: #363062;
     padding: 1rem;
-    color: #fff;
     text-align: center;
 }
 
@@ -60,7 +60,7 @@ input[type=submit]:active {
 }
 
 main {
-    background-color: #fff;
+    background-color: #827397;
     padding: 1rem;
 }
 
@@ -73,18 +73,19 @@ section {
 
 article {
     width: calc(100% / 3 - 2rem);
+    background-color: #4D4C7D;
     box-sizing: border-box;
     cursor: pointer;
-    border: 1px #ccc solid;
+    border: 1px #4D4C7D solid;
     padding: 1rem;
     border-radius: 6px;
-    box-shadow: 3px 6px 6px #ccc;
+    box-shadow: 3px 6px 6px #4D4C7D;
     transition: all 0.2s ease-in-out;
 }
 
 article:hover {
     transform: scale(1.02);
-    box-shadow: 0 0 2px #ccc;
+    box-shadow: 0 0 2px #4D4C7D;
 }
 
 article h2 {
@@ -109,11 +110,11 @@ figcaption {
     display: flex;
     flex-wrap: wrap;
     text-align: center;
-    color: gray;
+    color: #CFCFCF;
 }
 
 a {
-    color: blue;
+    color: #FFB570;
     font-size: small;
     display: flex;
     flex-wrap: wrap;
@@ -121,22 +122,13 @@ a {
     text-decoration: none;
 }
 
-a:visited {
-    color: blue;
-    font-size: x-small;
-    display: flex;
-    flex-wrap: wrap;
-    text-align: center;
-    text-decoration: none;
-}
-
 a:hover {
-    color: darkblue;
+    color: darkorange;
     text-decoration: underline;
 }
 
 footer {
-    background-color: #3ea9dd;
+    background-color: #E9D5DA;
     text-align: center;
     padding: 1rem;
 }
@@ -162,6 +154,6 @@ dialog span {
     right: 2rem;
     font-size: 2rem;
     text-decoration: none;
-    color: #fff;
+    color: #000000;
     filter: drop-shadow(2px 2px 2px #000);
 }

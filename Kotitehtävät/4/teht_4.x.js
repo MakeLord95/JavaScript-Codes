@@ -69,7 +69,7 @@ function appendData(jsonData, answer) {
 
     let a = document.createElement('a');
     figure.appendChild(a);
-    a.innerText = 'More Details';
+    a.innerText = '> More Details';
 
     if (answer === false) {
       a.setAttribute('href', jsonData[i]['show']['url']);
@@ -128,7 +128,8 @@ button.addEventListener('click', function(evt) {
   evt.preventDefault();
   console.log('button pressed');
 
-  let search_term = document.querySelector('input[name="search_term"]').value;
+  let search_term = 'Dome';
+  //document.querySelector('input[name="search_term"]').value;
   console.log('Search term: ' + search_term);
   asynchronousFunction(search_term).then(r => r);
 });
