@@ -1,1 +1,3 @@
-# JavaScript-Koodit
+# JavaScript-Codes
+
+Software 2 JavaScript codes
